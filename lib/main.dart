@@ -1,12 +1,10 @@
 import 'package:agro_metrics/config/routes.dart';
+import 'package:agro_metrics/config/teams.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_riverpod/flutter_riverpod.dart';
 
 void main() {
   runApp(
-    const ProviderScope(
-      child: MainApp(),
-    ),
+    const MainApp(),
   );
 }
 
@@ -18,7 +16,11 @@ class MainApp extends StatelessWidget {
     return MaterialApp.router(
       debugShowCheckedModeBanner: false,
       title: 'Agro Metrics',
-      routerConfig: router
+      routerConfig: router,
+      theme: ThemeData(
+        useMaterial3: true,
+        colorSchemeSeed: colorSeed,
+      ),
     );
   }
 }
